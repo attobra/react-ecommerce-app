@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import {ProductConsumer} from '../context'
 import {Link} from 'react-router-dom'
 import {ButtonContainer} from './Button'
-import Product from './Product'
+// import Product from './Product'
 
 export default class Details extends Component {
     render() {
         return (
             <ProductConsumer>
                 {(value)=>{
-                    const {id, company, img, info, price, title, inCart} = value.detailProduct
+                    const {id, company, img, info, price, title, inCart} = value.detailProduct;
                     return(
                         <div className= "container py-5">
                             {/* title */}
@@ -49,8 +49,9 @@ export default class Details extends Component {
                                         <ButtonContainer 
                                         cart
                                         disabled={inCart? true: false}
-                                        onClick={()=>{
-                                            value.addToCart(id)
+                                        onClick={()=> {
+                                            value.addToCart(id);
+                                            value.openModal(id);
                                         }}
                                         >
                                             {inCart? 'inCart': 'add to cart'}

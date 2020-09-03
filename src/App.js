@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Switch, Route} from 'react-router-dom'
-import logo from './logo.svg'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Navbar from './components/Navbar'
@@ -8,7 +7,7 @@ import Cart from './components/Cart'
 import Details from './components/Details'
 import ProductList from './components/ProductList'
 import Default from './components/Default'
-import Product from './components/Product';
+import Modal from './components/Modal'
 
 class App extends Component {
   render(){
@@ -23,6 +22,10 @@ class App extends Component {
         <Route path="/cart" component={Cart} />
         <Route component={Default} />
       </Switch>
+
+      {/* we do not put Modal inside switch because it appear 1x
+      when we click on the image */}
+      <Modal />
     </React.Fragment>
   );
 }
