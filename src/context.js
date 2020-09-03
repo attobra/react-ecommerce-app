@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import {storeProducts, detailProduct} from './data'
+import React, { Component } from 'react';
+import {storeProducts, detailProduct} from './data';
 const ProductContext= React.createContext();
 // CONTEXT API
 //it comes with 2 components Provider AND Consumer
@@ -57,10 +57,10 @@ class ProductProvider extends Component {
         )
     }
 
-    openModal = id => {
+    openModal = (id) => {
         const product = this.getItem(id);
         this.setState(()=>{
-            return {modalProduct: product, modelOpen:true};
+            return {modalProduct:product, modalOpen:true};
         });
     }
 
